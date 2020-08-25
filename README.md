@@ -1,1 +1,1 @@
-#Java WEPA self-study tasks
+Java WEPA self-study tasks

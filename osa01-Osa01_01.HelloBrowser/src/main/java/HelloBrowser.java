@@ -30,6 +30,10 @@ public class HelloBrowser {
         while (input.hasNextLine()) {
             System.out.println(input.nextLine());
         }
+        
+        writer.close();
+        input.close();
+        socket.close();
 
     }
 }

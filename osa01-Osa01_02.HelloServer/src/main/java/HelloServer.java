@@ -36,11 +36,8 @@ public class HelloServer {
     }
 
     public static void readFileContents(PrintWriter writer) {
-        try (Scanner fileReader = new Scanner(Paths.get("index.html"))) {
-            while (fileReader.hasNextLine()) {
-                String line = fileReader.nextLine();
-                System.out.println(line);
-            }
+        try {
+            Files.lines(Paths.get("index.html")).forEach(line -> writer.println(line));
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

@@ -8,4 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloRequestParamController {
 
+    @GetMapping("/hello")
+    @ResponseBody
+    public String greet(@RequestParam String name) {
+        return (name.equals("") ? "Hello John Doe" : "Hello " + name);
+        
+    }
 }

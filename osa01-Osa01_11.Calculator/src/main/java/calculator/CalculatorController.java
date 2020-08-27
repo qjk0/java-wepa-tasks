@@ -10,14 +10,14 @@ public class CalculatorController {
 
     @GetMapping("/add")
     @ResponseBody
-    public String addNumbers(@RequestParam Integer numOne, @RequestParam Integer numTwo) {
-        return String.valueOf(numOne + numTwo);
+    public String add(@RequestParam Integer first, @RequestParam Integer second) {
+        return String.valueOf(first + second);
     }
 
     @GetMapping("/multiply")
     @ResponseBody
-    public String multiplyNumbers(@RequestParam Integer numOne, @RequestParam Integer numTwo) {
-        return String.valueOf(numOne * numTwo);
+    public String multiply(@RequestParam Integer first, @RequestParam Integer second) {
+        return String.valueOf(first * second);
     }
 
 }

@@ -9,7 +9,11 @@
 
         <!-- lisää toiminnallisuus listalla olevien esineiden listaamiseen -->
 
-        
+        <ol>
+            <li th:each="item : ${list}">
+                <span th:text="|${item.name} (${item.type})|"></span>
+            </li>
+        </ol>
         <!-- Älä koske alla olevaan lomakkeeseen, tutustumme 
         tiedon lisäämiseen hieman myöhemmin -->
         <h2>Add item</h2>

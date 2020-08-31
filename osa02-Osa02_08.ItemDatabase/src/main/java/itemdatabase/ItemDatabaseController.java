@@ -19,4 +19,16 @@ public class ItemDatabaseController {
         return "index";
     }
 
+    @GetMapping("/wipedb")
+    public String wipedb() {
+        this.itemRepository.deleteAll();
+        return "redirect:/";
+    }
+
+    @PostMapping("/")
+    public String post(String name) {
+        itemRepository.save(new Item(name));
+        return "redirect:/";
+    }
+
 }

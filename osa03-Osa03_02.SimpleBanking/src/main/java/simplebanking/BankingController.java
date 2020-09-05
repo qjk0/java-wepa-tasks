@@ -1,5 +1,6 @@
 package simplebanking;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,8 +42,11 @@ public class BankingController {
             account = accountRepository.save(account);
         }
 
-        // DO SOMETHING HERE
-
+        account.setClient(client);
+        client.getAccounts().add(account);
+        accountRepository.save(account);
+        clientRepository.save(client);
+        
         return "redirect:/";
     }
 }
